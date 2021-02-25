@@ -1,0 +1,772 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		189FF72A2ECD9BF8B571BF66 /* Pods_Sleep_Apnea.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1118B725BA658403EAD67B5 /* Pods_Sleep_Apnea.framework */; };
+		63AF33B70B430E27D0F838D7 /* Pods_Sleep_ApneaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74882E6D6490B24BE75D92C5 /* Pods_Sleep_ApneaTests.framework */; };
+		842B733F4FE4DC6F796B349F /* Pods_Sleep_Apnea_Sleep_ApneaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B732AF27F2E6C115B6C43582 /* Pods_Sleep_Apnea_Sleep_ApneaUITests.framework */; };
+		BB0168D225CBE3F6005FF2AB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0168D125CBE3F6005FF2AB /* ProfileViewController.swift */; };
+		BB5778FA25D0836300DE27D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB5778F925D0836300DE27D2 /* GoogleService-Info.plist */; };
+		BB57790125D0860F00DE27D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB5778F925D0836300DE27D2 /* GoogleService-Info.plist */; };
+		BB57790525D0861000DE27D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB5778F925D0836300DE27D2 /* GoogleService-Info.plist */; };
+		BB8C2B8425BEE8610050A777 /* dataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8C2B8325BEE8610050A777 /* dataStore.swift */; };
+		BB8C2B8925BEEC970050A777 /* notificationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8C2B8825BEEC970050A777 /* notificationRepository.swift */; };
+		BB92D5C025ADC6D800EDEC07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB92D5BF25ADC6D800EDEC07 /* AppDelegate.swift */; };
+		BB92D5C225ADC6D800EDEC07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB92D5C125ADC6D800EDEC07 /* SceneDelegate.swift */; };
+		BB92D5C425ADC6D800EDEC07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB92D5C325ADC6D800EDEC07 /* ViewController.swift */; };
+		BB92D5C725ADC6D800EDEC07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB92D5C525ADC6D800EDEC07 /* Main.storyboard */; };
+		BB92D5C925ADC6DB00EDEC07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB92D5C825ADC6DB00EDEC07 /* Assets.xcassets */; };
+		BB92D5CC25ADC6DB00EDEC07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB92D5CA25ADC6DB00EDEC07 /* LaunchScreen.storyboard */; };
+		BB92D5D725ADC6DB00EDEC07 /* Sleep_ApneaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB92D5D625ADC6DB00EDEC07 /* Sleep_ApneaTests.swift */; };
+		BB92D5E225ADC6DC00EDEC07 /* Sleep_ApneaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB92D5E125ADC6DC00EDEC07 /* Sleep_ApneaUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BB92D5D325ADC6DB00EDEC07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB92D5B425ADC6D800EDEC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB92D5BB25ADC6D800EDEC07;
+			remoteInfo = Sleep_Apnea;
+		};
+		BB92D5DE25ADC6DC00EDEC07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB92D5B425ADC6D800EDEC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB92D5BB25ADC6D800EDEC07;
+			remoteInfo = Sleep_Apnea;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3E3C2C2015A5C0C401F9AC5D /* Pods-Sleep_ApneaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sleep_ApneaTests.release.xcconfig"; path = "Target Support Files/Pods-Sleep_ApneaTests/Pods-Sleep_ApneaTests.release.xcconfig"; sourceTree = "<group>"; };
+		74882E6D6490B24BE75D92C5 /* Pods_Sleep_ApneaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sleep_ApneaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82132487B60A942AC25FAA6F /* Pods-Sleep_Apnea-Sleep_ApneaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sleep_Apnea-Sleep_ApneaUITests.release.xcconfig"; path = "Target Support Files/Pods-Sleep_Apnea-Sleep_ApneaUITests/Pods-Sleep_Apnea-Sleep_ApneaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		859A48F2385A9577A5649C38 /* Pods-Sleep_Apnea.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sleep_Apnea.debug.xcconfig"; path = "Target Support Files/Pods-Sleep_Apnea/Pods-Sleep_Apnea.debug.xcconfig"; sourceTree = "<group>"; };
+		936A34C8AEDE1BB06D2D0391 /* Pods-Sleep_ApneaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sleep_ApneaTests.debug.xcconfig"; path = "Target Support Files/Pods-Sleep_ApneaTests/Pods-Sleep_ApneaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B732AF27F2E6C115B6C43582 /* Pods_Sleep_Apnea_Sleep_ApneaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sleep_Apnea_Sleep_ApneaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB0168D125CBE3F6005FF2AB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BB5778F925D0836300DE27D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BB8C2B8325BEE8610050A777 /* dataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataStore.swift; sourceTree = "<group>"; };
+		BB8C2B8825BEEC970050A777 /* notificationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationRepository.swift; sourceTree = "<group>"; };
+		BB92D5BC25ADC6D800EDEC07 /* Sleep_Apnea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sleep_Apnea.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB92D5BF25ADC6D800EDEC07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB92D5C125ADC6D800EDEC07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BB92D5C325ADC6D800EDEC07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BB92D5C625ADC6D800EDEC07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BB92D5C825ADC6DB00EDEC07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB92D5CB25ADC6DB00EDEC07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BB92D5CD25ADC6DB00EDEC07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB92D5D225ADC6DB00EDEC07 /* Sleep_ApneaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sleep_ApneaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB92D5D625ADC6DB00EDEC07 /* Sleep_ApneaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleep_ApneaTests.swift; sourceTree = "<group>"; };
+		BB92D5D825ADC6DB00EDEC07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB92D5DD25ADC6DC00EDEC07 /* Sleep_ApneaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sleep_ApneaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB92D5E125ADC6DC00EDEC07 /* Sleep_ApneaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sleep_ApneaUITests.swift; sourceTree = "<group>"; };
+		BB92D5E325ADC6DC00EDEC07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1118B725BA658403EAD67B5 /* Pods_Sleep_Apnea.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sleep_Apnea.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5CB1058C8E94393FDE5370A /* Pods-Sleep_Apnea.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sleep_Apnea.release.xcconfig"; path = "Target Support Files/Pods-Sleep_Apnea/Pods-Sleep_Apnea.release.xcconfig"; sourceTree = "<group>"; };
+		DABE7E660AD009BECAFD1211 /* Pods-Sleep_Apnea-Sleep_ApneaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sleep_Apnea-Sleep_ApneaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Sleep_Apnea-Sleep_ApneaUITests/Pods-Sleep_Apnea-Sleep_ApneaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB92D5B925ADC6D800EDEC07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				189FF72A2ECD9BF8B571BF66 /* Pods_Sleep_Apnea.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB92D5CF25ADC6DB00EDEC07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63AF33B70B430E27D0F838D7 /* Pods_Sleep_ApneaTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB92D5DA25ADC6DC00EDEC07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				842B733F4FE4DC6F796B349F /* Pods_Sleep_Apnea_Sleep_ApneaUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18F64BA2E3B5D0E954AAEB74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1118B725BA658403EAD67B5 /* Pods_Sleep_Apnea.framework */,
+				B732AF27F2E6C115B6C43582 /* Pods_Sleep_Apnea_Sleep_ApneaUITests.framework */,
+				74882E6D6490B24BE75D92C5 /* Pods_Sleep_ApneaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		279025D0BA7ACC52D05A63C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				859A48F2385A9577A5649C38 /* Pods-Sleep_Apnea.debug.xcconfig */,
+				C5CB1058C8E94393FDE5370A /* Pods-Sleep_Apnea.release.xcconfig */,
+				DABE7E660AD009BECAFD1211 /* Pods-Sleep_Apnea-Sleep_ApneaUITests.debug.xcconfig */,
+				82132487B60A942AC25FAA6F /* Pods-Sleep_Apnea-Sleep_ApneaUITests.release.xcconfig */,
+				936A34C8AEDE1BB06D2D0391 /* Pods-Sleep_ApneaTests.debug.xcconfig */,
+				3E3C2C2015A5C0C401F9AC5D /* Pods-Sleep_ApneaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BB92D5B325ADC6D800EDEC07 = {
+			isa = PBXGroup;
+			children = (
+				BB92D5BE25ADC6D800EDEC07 /* Sleep_Apnea */,
+				BB92D5D525ADC6DB00EDEC07 /* Sleep_ApneaTests */,
+				BB92D5E025ADC6DC00EDEC07 /* Sleep_ApneaUITests */,
+				BB92D5BD25ADC6D800EDEC07 /* Products */,
+				279025D0BA7ACC52D05A63C8 /* Pods */,
+				18F64BA2E3B5D0E954AAEB74 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BB92D5BD25ADC6D800EDEC07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB92D5BC25ADC6D800EDEC07 /* Sleep_Apnea.app */,
+				BB92D5D225ADC6DB00EDEC07 /* Sleep_ApneaTests.xctest */,
+				BB92D5DD25ADC6DC00EDEC07 /* Sleep_ApneaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB92D5BE25ADC6D800EDEC07 /* Sleep_Apnea */ = {
+			isa = PBXGroup;
+			children = (
+				BB92D5BF25ADC6D800EDEC07 /* AppDelegate.swift */,
+				BB92D5C125ADC6D800EDEC07 /* SceneDelegate.swift */,
+				BB92D5C325ADC6D800EDEC07 /* ViewController.swift */,
+				BB8C2B8825BEEC970050A777 /* notificationRepository.swift */,
+				BB8C2B8325BEE8610050A777 /* dataStore.swift */,
+				BB92D5C525ADC6D800EDEC07 /* Main.storyboard */,
+				BB0168D125CBE3F6005FF2AB /* ProfileViewController.swift */,
+				BB92D5C825ADC6DB00EDEC07 /* Assets.xcassets */,
+				BB5778F925D0836300DE27D2 /* GoogleService-Info.plist */,
+				BB92D5CA25ADC6DB00EDEC07 /* LaunchScreen.storyboard */,
+				BB92D5CD25ADC6DB00EDEC07 /* Info.plist */,
+			);
+			path = Sleep_Apnea;
+			sourceTree = "<group>";
+		};
+		BB92D5D525ADC6DB00EDEC07 /* Sleep_ApneaTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB92D5D625ADC6DB00EDEC07 /* Sleep_ApneaTests.swift */,
+				BB92D5D825ADC6DB00EDEC07 /* Info.plist */,
+			);
+			path = Sleep_ApneaTests;
+			sourceTree = "<group>";
+		};
+		BB92D5E025ADC6DC00EDEC07 /* Sleep_ApneaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BB92D5E125ADC6DC00EDEC07 /* Sleep_ApneaUITests.swift */,
+				BB92D5E325ADC6DC00EDEC07 /* Info.plist */,
+			);
+			path = Sleep_ApneaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB92D5BB25ADC6D800EDEC07 /* Sleep_Apnea */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB92D5E625ADC6DC00EDEC07 /* Build configuration list for PBXNativeTarget "Sleep_Apnea" */;
+			buildPhases = (
+				1563FCC89684549C4D2843ED /* [CP] Check Pods Manifest.lock */,
+				BB92D5B825ADC6D800EDEC07 /* Sources */,
+				BB92D5B925ADC6D800EDEC07 /* Frameworks */,
+				BB92D5BA25ADC6D800EDEC07 /* Resources */,
+				E3FD5F059F73849357DC5682 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sleep_Apnea;
+			productName = Sleep_Apnea;
+			productReference = BB92D5BC25ADC6D800EDEC07 /* Sleep_Apnea.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BB92D5D125ADC6DB00EDEC07 /* Sleep_ApneaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB92D5E925ADC6DC00EDEC07 /* Build configuration list for PBXNativeTarget "Sleep_ApneaTests" */;
+			buildPhases = (
+				C23B7D20D94A8502686E2BE6 /* [CP] Check Pods Manifest.lock */,
+				BB92D5CE25ADC6DB00EDEC07 /* Sources */,
+				BB92D5CF25ADC6DB00EDEC07 /* Frameworks */,
+				BB92D5D025ADC6DB00EDEC07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB92D5D425ADC6DB00EDEC07 /* PBXTargetDependency */,
+			);
+			name = Sleep_ApneaTests;
+			productName = Sleep_ApneaTests;
+			productReference = BB92D5D225ADC6DB00EDEC07 /* Sleep_ApneaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BB92D5DC25ADC6DC00EDEC07 /* Sleep_ApneaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB92D5EC25ADC6DC00EDEC07 /* Build configuration list for PBXNativeTarget "Sleep_ApneaUITests" */;
+			buildPhases = (
+				78EEFDD9D9DF342EFEEF4426 /* [CP] Check Pods Manifest.lock */,
+				BB92D5D925ADC6DC00EDEC07 /* Sources */,
+				BB92D5DA25ADC6DC00EDEC07 /* Frameworks */,
+				BB92D5DB25ADC6DC00EDEC07 /* Resources */,
+				ADCD3100C64BFDFE14DFBEAA /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB92D5DF25ADC6DC00EDEC07 /* PBXTargetDependency */,
+			);
+			name = Sleep_ApneaUITests;
+			productName = Sleep_ApneaUITests;
+			productReference = BB92D5DD25ADC6DC00EDEC07 /* Sleep_ApneaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB92D5B425ADC6D800EDEC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					BB92D5BB25ADC6D800EDEC07 = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					BB92D5D125ADC6DB00EDEC07 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = BB92D5BB25ADC6D800EDEC07;
+					};
+					BB92D5DC25ADC6DC00EDEC07 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = BB92D5BB25ADC6D800EDEC07;
+					};
+				};
+			};
+			buildConfigurationList = BB92D5B725ADC6D800EDEC07 /* Build configuration list for PBXProject "Sleep_Apnea" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB92D5B325ADC6D800EDEC07;
+			productRefGroup = BB92D5BD25ADC6D800EDEC07 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB92D5BB25ADC6D800EDEC07 /* Sleep_Apnea */,
+				BB92D5D125ADC6DB00EDEC07 /* Sleep_ApneaTests */,
+				BB92D5DC25ADC6DC00EDEC07 /* Sleep_ApneaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB92D5BA25ADC6D800EDEC07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB92D5CC25ADC6DB00EDEC07 /* LaunchScreen.storyboard in Resources */,
+				BB5778FA25D0836300DE27D2 /* GoogleService-Info.plist in Resources */,
+				BB92D5C925ADC6DB00EDEC07 /* Assets.xcassets in Resources */,
+				BB92D5C725ADC6D800EDEC07 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB92D5D025ADC6DB00EDEC07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB57790125D0860F00DE27D2 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB92D5DB25ADC6DC00EDEC07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB57790525D0861000DE27D2 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1563FCC89684549C4D2843ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sleep_Apnea-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78EEFDD9D9DF342EFEEF4426 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sleep_Apnea-Sleep_ApneaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADCD3100C64BFDFE14DFBEAA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sleep_Apnea-Sleep_ApneaUITests/Pods-Sleep_Apnea-Sleep_ApneaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sleep_Apnea-Sleep_ApneaUITests/Pods-Sleep_Apnea-Sleep_ApneaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sleep_Apnea-Sleep_ApneaUITests/Pods-Sleep_Apnea-Sleep_ApneaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C23B7D20D94A8502686E2BE6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sleep_ApneaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3FD5F059F73849357DC5682 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sleep_Apnea/Pods-Sleep_Apnea-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sleep_Apnea/Pods-Sleep_Apnea-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sleep_Apnea/Pods-Sleep_Apnea-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB92D5B825ADC6D800EDEC07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB8C2B8425BEE8610050A777 /* dataStore.swift in Sources */,
+				BB8C2B8925BEEC970050A777 /* notificationRepository.swift in Sources */,
+				BB92D5C425ADC6D800EDEC07 /* ViewController.swift in Sources */,
+				BB0168D225CBE3F6005FF2AB /* ProfileViewController.swift in Sources */,
+				BB92D5C025ADC6D800EDEC07 /* AppDelegate.swift in Sources */,
+				BB92D5C225ADC6D800EDEC07 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB92D5CE25ADC6DB00EDEC07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB92D5D725ADC6DB00EDEC07 /* Sleep_ApneaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB92D5D925ADC6DC00EDEC07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB92D5E225ADC6DC00EDEC07 /* Sleep_ApneaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BB92D5D425ADC6DB00EDEC07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB92D5BB25ADC6D800EDEC07 /* Sleep_Apnea */;
+			targetProxy = BB92D5D325ADC6DB00EDEC07 /* PBXContainerItemProxy */;
+		};
+		BB92D5DF25ADC6DC00EDEC07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB92D5BB25ADC6D800EDEC07 /* Sleep_Apnea */;
+			targetProxy = BB92D5DE25ADC6DC00EDEC07 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BB92D5C525ADC6D800EDEC07 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB92D5C625ADC6D800EDEC07 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BB92D5CA25ADC6DB00EDEC07 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB92D5CB25ADC6DB00EDEC07 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BB92D5E425ADC6DC00EDEC07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BB92D5E525ADC6DC00EDEC07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BB92D5E725ADC6DC00EDEC07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 859A48F2385A9577A5649C38 /* Pods-Sleep_Apnea.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RW93MTQ49X;
+				INFOPLIST_FILE = Sleep_Apnea/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hamza.Sleep-Apnea";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BB92D5E825ADC6DC00EDEC07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5CB1058C8E94393FDE5370A /* Pods-Sleep_Apnea.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RW93MTQ49X;
+				INFOPLIST_FILE = Sleep_Apnea/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hamza.Sleep-Apnea";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BB92D5EA25ADC6DC00EDEC07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 936A34C8AEDE1BB06D2D0391 /* Pods-Sleep_ApneaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TKHAUW39G6;
+				INFOPLIST_FILE = Sleep_ApneaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hamza.Sleep-ApneaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sleep_Apnea.app/Sleep_Apnea";
+			};
+			name = Debug;
+		};
+		BB92D5EB25ADC6DC00EDEC07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E3C2C2015A5C0C401F9AC5D /* Pods-Sleep_ApneaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TKHAUW39G6;
+				INFOPLIST_FILE = Sleep_ApneaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hamza.Sleep-ApneaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sleep_Apnea.app/Sleep_Apnea";
+			};
+			name = Release;
+		};
+		BB92D5ED25ADC6DC00EDEC07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DABE7E660AD009BECAFD1211 /* Pods-Sleep_Apnea-Sleep_ApneaUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TKHAUW39G6;
+				INFOPLIST_FILE = Sleep_ApneaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hamza.Sleep-ApneaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Sleep_Apnea;
+			};
+			name = Debug;
+		};
+		BB92D5EE25ADC6DC00EDEC07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82132487B60A942AC25FAA6F /* Pods-Sleep_Apnea-Sleep_ApneaUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TKHAUW39G6;
+				INFOPLIST_FILE = Sleep_ApneaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hamza.Sleep-ApneaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Sleep_Apnea;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB92D5B725ADC6D800EDEC07 /* Build configuration list for PBXProject "Sleep_Apnea" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB92D5E425ADC6DC00EDEC07 /* Debug */,
+				BB92D5E525ADC6DC00EDEC07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB92D5E625ADC6DC00EDEC07 /* Build configuration list for PBXNativeTarget "Sleep_Apnea" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB92D5E725ADC6DC00EDEC07 /* Debug */,
+				BB92D5E825ADC6DC00EDEC07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB92D5E925ADC6DC00EDEC07 /* Build configuration list for PBXNativeTarget "Sleep_ApneaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB92D5EA25ADC6DC00EDEC07 /* Debug */,
+				BB92D5EB25ADC6DC00EDEC07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB92D5EC25ADC6DC00EDEC07 /* Build configuration list for PBXNativeTarget "Sleep_ApneaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB92D5ED25ADC6DC00EDEC07 /* Debug */,
+				BB92D5EE25ADC6DC00EDEC07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BB92D5B425ADC6D800EDEC07 /* Project object */;
+}

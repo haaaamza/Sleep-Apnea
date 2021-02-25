@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hHd-tf-oYb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sleep Apnea-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sleep_Apnea" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sleep_bed" translatesAutoresizingMaskIntoConstraints="NO" id="tdo-2N-jYq">
+                                <rect key="frame" x="20" y="518" width="374" height="236"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tdo-2N-jYq" secondAttribute="height" multiplier="187:118" id="UUq-QT-EnH"/>
+                                </constraints>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="4kD-EO-sLc">
+                                <rect key="frame" x="20" y="288" width="374" height="220"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4kD-EO-sLc" secondAttribute="height" multiplier="17:10" id="usd-oS-DuR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching for the device..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yW-Cc-86x">
+                                <rect key="frame" x="82.5" y="242.5" width="249.5" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMB-3g-mHt">
+                                <rect key="frame" x="41" y="186" width="60" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="TOi-LP-ieC"/>
+                                    <constraint firstAttribute="width" constant="60" id="ZSQ-sR-e89"/>
+                                    <constraint firstAttribute="width" secondItem="IMB-3g-mHt" secondAttribute="height" multiplier="5:4" id="tnE-H4-mgM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="person" catalog="system">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" systemColor="labelColor"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large" weight="heavy">
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    </preferredSymbolConfiguration>
+                                </state>
+                                <connections>
+                                    <action selector="touchProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iGz-Pu-BAv"/>
+                                    <segue destination="3Uc-wV-HZm" kind="presentation" identifier="profile" id="ADl-Jv-vFF"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="c3z-9A-8Ff">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="0.66112654730184184" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IMB-3g-mHt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-136" id="CSO-Df-0Kz"/>
+                            <constraint firstItem="4kD-EO-sLc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="Mdf-xL-Gtz"/>
+                            <constraint firstItem="4kD-EO-sLc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.903382" id="OZu-rh-0fm"/>
+                            <constraint firstItem="c3z-9A-8Ff" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Qtn-3T-uMa"/>
+                            <constraint firstItem="tdo-2N-jYq" firstAttribute="top" secondItem="4kD-EO-sLc" secondAttribute="bottom" constant="10" id="SLS-GM-4Eo"/>
+                            <constraint firstItem="4kD-EO-sLc" firstAttribute="top" secondItem="2yW-Cc-86x" secondAttribute="bottom" constant="20" id="T7K-Ob-MGJ"/>
+                            <constraint firstItem="2yW-Cc-86x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZPB-fm-Nkg"/>
+                            <constraint firstItem="c3z-9A-8Ff" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="adk-pM-U0l"/>
+                            <constraint firstItem="2yW-Cc-86x" firstAttribute="top" secondItem="IMB-3g-mHt" secondAttribute="bottom" constant="8.5" id="exb-4x-iNj"/>
+                            <constraint firstItem="tdo-2N-jYq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ihr-jN-WmR"/>
+                            <constraint firstItem="tdo-2N-jYq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.903382" id="il7-J6-3Ix"/>
+                            <constraint firstItem="4kD-EO-sLc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n7p-XK-n4d"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sleep Apnea" id="igA-ZT-qk7"/>
+                    <connections>
+                        <outlet property="bottomImage" destination="tdo-2N-jYq" id="xFZ-pg-e7w"/>
+                        <outlet property="centralMessage" destination="2yW-Cc-86x" id="F7h-V3-z4w"/>
+                        <outlet property="connectingActivityIndicator" destination="c3z-9A-8Ff" id="wTk-mF-d2u"/>
+                        <outlet property="profileButton" destination="IMB-3g-mHt" id="Gud-Rn-GcJ"/>
+                        <outlet property="topImage" destination="4kD-EO-sLc" id="Knj-aA-doH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="682.60869565217399" y="93.75"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="syc-HE-BoM">
+            <objects>
+                <viewController id="3Uc-wV-HZm" customClass="ProfileViewController" customModule="Sleep_Apnea" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6JC-AF-sfB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter full name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tsx-va-LxY">
+                                <rect key="frame" x="85.5" y="352" width="243" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tsx-va-LxY" secondAttribute="height" multiplier="243:34" id="J7x-x4-vyY"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSx-ac-tO2">
+                                <rect key="frame" x="125" y="406" width="164" height="67"/>
+                                <color key="backgroundColor" red="0.5576580796234949" green="0.87175812384094853" blue="0.47094818522552612" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="dgw-bA-Xxq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="getName:" destination="3Uc-wV-HZm" eventType="touchUpInside" id="ACn-ni-mtI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JdT-1O-fGL">
+                                <rect key="frame" x="104.5" y="285" width="205.5" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JdT-1O-fGL" secondAttribute="height" multiplier="205:37" id="yE0-nD-2Wg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MSc-vK-Evn"/>
+                        <color key="backgroundColor" red="0.79543951485506958" green="0.76098137425263701" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="QSx-ac-tO2" firstAttribute="top" secondItem="tsx-va-LxY" secondAttribute="bottom" constant="20" id="4zp-ha-9eC"/>
+                            <constraint firstItem="MSc-vK-Evn" firstAttribute="bottom" secondItem="QSx-ac-tO2" secondAttribute="bottom" constant="335" id="B3h-qt-OJ2"/>
+                            <constraint firstItem="QSx-ac-tO2" firstAttribute="leading" secondItem="MSc-vK-Evn" secondAttribute="leading" constant="125" id="MYm-Vj-OaE"/>
+                            <constraint firstItem="QSx-ac-tO2" firstAttribute="centerX" secondItem="6JC-AF-sfB" secondAttribute="centerX" id="Ujw-m6-H6R"/>
+                            <constraint firstItem="tsx-va-LxY" firstAttribute="centerX" secondItem="6JC-AF-sfB" secondAttribute="centerX" id="kpB-9u-Hx9"/>
+                            <constraint firstItem="tsx-va-LxY" firstAttribute="top" secondItem="JdT-1O-fGL" secondAttribute="bottom" constant="30" id="pjM-oK-SQe"/>
+                            <constraint firstItem="JdT-1O-fGL" firstAttribute="centerX" secondItem="6JC-AF-sfB" secondAttribute="centerX" id="zDj-dK-WbY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameText" destination="tsx-va-LxY" id="neK-DJ-vEj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vm9-vM-45H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724.63768115942037" y="797.54464285714278"/>
+        </scene>
+        <!--Sleep Apnea-->
+        <scene sceneID="EV0-xG-om0">
+            <objects>
+                <navigationController title="Sleep Apnea" automaticallyAdjustsScrollViewInsets="NO" id="hHd-tf-oYb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zm7-be-V2D">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ghq-Ta-P1b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="odD-jc-vl3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-226.08695652173915" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cloud" width="835" height="835"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="sleep_bed" width="1280" height="774"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

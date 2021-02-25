@@ -1,0 +1,6 @@
+framework module Pods_Sleep_ApneaTests {
+  umbrella header "Pods-Sleep_ApneaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
