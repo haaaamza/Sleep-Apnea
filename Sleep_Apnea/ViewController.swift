@@ -88,7 +88,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         print((peripheral.name!))
         print(peripheral.identifier)
         decodePeripheralState(peripheralState: peripheral.state)
-        if ((peripheral.name?.contains("Thunderboard")) ?? false){ //MARK: Insert name here
+        if ((peripheral.name?.contains("Shiv007_2211")) ?? false){ //MARK: Insert name here
             print("Found my board!")
             self.peripheralSleep = peripheral
             self.peripheralSleep?.delegate = self

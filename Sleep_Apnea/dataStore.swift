@@ -30,4 +30,6 @@ extension CBUUID{
     
     static let AccelerationMeasurement = CBUUID(string:  "0xc4c1f6e2-4be5-11e5-885d-feff819cdc9f")
     
+    static let headBand = CBUUID(string: "57D59FA8-2E1B-7E40-482E-C442247F2911")
+    
 }
