@@ -134,7 +134,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
             // now to discover characteristics for each service
             for service in services {
                 // we want only to discover the characteristics of my InertialMeasurement Service
-                if service.uuid == CBUUID.InertialMeasurement {
+                if service.uuid == CBUUID.bandService {
                     // by setting it to be nil its going to discover all characteristics
                     print("My desired service: \(service.description)\n")
                     peripheral.discoverCharacteristics(nil, for: service)
@@ -148,7 +148,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         if let charac = service.characteristics {
             for characteristic in charac {
-                if characteristic.uuid == CBUUID.AccelerationMeasurement {
+                if characteristic.uuid == CBUUID.readBand {
                     print("My desired characteristic: \(characteristic.description)\n")
                     peripheral.setNotifyValue(true, for: characteristic)
                 }
@@ -164,21 +164,22 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         
         // for acceleration
-        if characteristic.uuid == CBUUID.AccelerationMeasurement{
+        if characteristic.uuid == CBUUID.readBand{
             // STEP 13: we generally have to decode BLE
             // data into human readable format
-            let acc_data = tb_vectorValue(using: characteristic)
+//            let acc_data = tb_vectorValue(using: characteristic)
+            let eog_data = convertToDec(using: characteristic)
             DispatchQueue.main.async { () -> Void in
                 if username == ""{self.centralMessage.text = "Please enter your name!"}
                 else {
                     self.centralMessage.text = "Storing your data in the Cloud!"
                     //MARK: Update FireBase here!
                     //print("Cloud!!!")
-                    let x_data = Double((acc_data?.x)!).magnitude
+//                    let x_data = Double((acc_data?.x)!).magnitude
 //                    let y_data = Double((acc_data?.y)!).magnitude
 //                    let z_data = Double((acc_data?.z)!).magnitude
-                    print(x_data)
-                    self.notifRepo.addData(Notification(EOG: x_data))
+//                    print(x_data)
+                    self.notifRepo.addData(Notification(EOG: eog_data))
                 }
             } // END DispatchQueue.main.async...
         } // END if characteristic.uuid ==...
@@ -208,7 +209,13 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         }
         return nil
     }
-    
+    func convertToDec (using eogMeasurementCharacteristic: CBCharacteristic) -> Double{
+        if let data = eogMeasurementCharacteristic.value{
+//            return UInt8(strtoul(data, nil, 16)) //If DEC UNCOMMENT this
+            return data //Depends on the value written
+        }
+        print("We reached here, data is not a value!")
+    }
     //MARK: HouseKeeping, in case of disconnects:
     func decodePeripheralState(peripheralState: CBPeripheralState) {
         switch peripheralState {
