@@ -209,12 +209,24 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         }
         return nil
     }
-    func convertToDec (using eogMeasurementCharacteristic: CBCharacteristic) -> Double{
+    func convertToDec (using eogMeasurementCharacteristic: CBCharacteristic) -> Float?{
         if let data = eogMeasurementCharacteristic.value{
-//            return UInt8(strtoul(data, nil, 16)) //If DEC UNCOMMENT this
-            return data //Depends on the value written
+            var e1Eye: Int16 = 0;
+            var e2Eye: Int16 = 0;
+            print(data.description)
+            print(data.indices)
+            print(data.index(after: 0))
+            (data as NSData).getBytes(&e1Eye, range: NSMakeRange(0, 2))
+            //MARK: Might not need these next 3 commented lines, check w/debugging!
+//            (data as NSData).getBytes(&e2Eye, range: NSMakeRange(2, 2))
+//            let eyeData2 = α(e2Eye);
+            let eyeData = α(e1Eye);
+//            return UInt8(strtoul(eyeData, nil, 16)) //If DEC UNCOMMENT this
+
+            return eyeData; //Needs to be debugged.
         }
         print("We reached here, data is not a value!")
+        return nil
     }
     //MARK: HouseKeeping, in case of disconnects:
     func decodePeripheralState(peripheralState: CBPeripheralState) {
