@@ -88,7 +88,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         print((peripheral.name!))
         print(peripheral.identifier)
         decodePeripheralState(peripheralState: peripheral.state)
-        if ((peripheral.name?.contains("Shiv007_2211")) ?? false){ //MARK: Insert name here
+        if ((peripheral.name?.contains("Shiv05_3311")) ?? false){ //MARK: Insert name here
             print("Found my board!")
             self.peripheralSleep = peripheral
             self.peripheralSleep?.delegate = self
@@ -108,7 +108,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
             self.bottomImage.isHidden = false
         }
         print("Discovering all  services!....");
-        self.peripheralSleep?.discoverServices([CBUUID.InertialMeasurement])
+        self.peripheralSleep?.discoverServices([CBUUID.bandService])
         self.peripheralSleep?.delegate = self
     }
     
@@ -121,7 +121,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
             self.connectingActivityIndicator.isHidden = false
             self.connectingActivityIndicator.startAnimating()
         }
-        self.centralManager?.scanForPeripherals(withServices: [CBUUID.InertialMeasurement])
+        self.centralManager?.scanForPeripherals(withServices: [CBUUID.bandService])
         print("Scanning for Periphs")
     }
     
@@ -168,13 +168,15 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
             // STEP 13: we generally have to decode BLE
             // data into human readable format
 //            let acc_data = tb_vectorValue(using: characteristic)
-            let eog_data = convertToDec(using: characteristic)
+            let eog_data = convertToDec(using: characteristic) ?? 0
+            //print("eog data: " + String(eog_data))
             DispatchQueue.main.async { () -> Void in
                 if username == ""{self.centralMessage.text = "Please enter your name!"}
                 else {
                     self.centralMessage.text = "Storing your data in the Cloud!"
                     //MARK: Update FireBase here!
                     //print("Cloud!!!")
+                    print("eog data: " + String(eog_data))
 //                    let x_data = Double((acc_data?.x)!).magnitude
 //                    let y_data = Double((acc_data?.y)!).magnitude
 //                    let z_data = Double((acc_data?.z)!).magnitude
@@ -209,25 +211,26 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         }
         return nil
     }
-    func convertToDec (using eogMeasurementCharacteristic: CBCharacteristic) -> Float?{
+    func convertToDec (using eogMeasurementCharacteristic: CBCharacteristic) -> Double?{
         if let data = eogMeasurementCharacteristic.value{
-            var e1Eye: Int16 = 0;
-            var e2Eye: Int16 = 0;
-            print(data.description)
-            print(data.indices)
-            print(data.index(after: 0))
+            var e1Eye: Double = 0;
+            var e2Eye: Double = 0;
+//            print(data.description)
+//            print(data.indices)
+//            print(data.index(after: 0))
             (data as NSData).getBytes(&e1Eye, range: NSMakeRange(0, 2))
             //MARK: Might not need these next 3 commented lines, check w/debugging!
 //            (data as NSData).getBytes(&e2Eye, range: NSMakeRange(2, 2))
 //            let eyeData2 = α(e2Eye);
-            let eyeData = α(e1Eye);
+            //let eyeData = e1Eye;
 //            return UInt8(strtoul(eyeData, nil, 16)) //If DEC UNCOMMENT this
-
-            return eyeData; //Needs to be debugged.
+            //print("Eye data: " + String(e1Eye))
+            return e1Eye //Needs to be debugged.
         }
         print("We reached here, data is not a value!")
         return nil
     }
+    
     //MARK: HouseKeeping, in case of disconnects:
     func decodePeripheralState(peripheralState: CBPeripheralState) {
         switch peripheralState {
@@ -245,9 +248,6 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         }
         
     } // END func decodePeripheralState(peripheralState
-    
-    
-    
 }
 
 

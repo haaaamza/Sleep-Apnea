@@ -9,7 +9,7 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 import CoreBluetooth
 
-var username: String = ""
+var username: String = "Jack"
 struct Notification: Codable, Identifiable{
     @DocumentID var docID: String?
     var id: String = username //MARK: See if you need DocumentID
