@@ -168,7 +168,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
             // STEP 13: we generally have to decode BLE
             // data into human readable format
 //            let acc_data = tb_vectorValue(using: characteristic)
-            let eog_data = convertToDec(using: characteristic) ?? 0
+            let eog_data = getEyeData(using: characteristic) ?? 0 //gets Eye data
             //print("eog data: " + String(eog_data))
             DispatchQueue.main.async { () -> Void in
                 if username == ""{self.centralMessage.text = "Please enter your name!"}
@@ -177,6 +177,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
                     //MARK: Update FireBase here!
                     //print("Cloud!!!")
                     print("eog data: " + String(eog_data))
+//                    let e1_data = Double((eog_data?)!).magnitude)
 //                    let x_data = Double((acc_data?.x)!).magnitude
 //                    let y_data = Double((acc_data?.y)!).magnitude
 //                    let z_data = Double((acc_data?.z)!).magnitude
@@ -211,27 +212,18 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         }
         return nil
     }
-    func convertToDec (using eogMeasurementCharacteristic: CBCharacteristic) -> Double?{
+    func getEyeData (using eogMeasurementCharacteristic: CBCharacteristic) -> Double?  /*/eyeData?*/{
         if let data = eogMeasurementCharacteristic.value{
             var e1Eye: Double = 0;
-            var e2Eye: Double = 0;
-//            print(data.description)
-//            print(data.indices)
-//            print(data.index(after: 0))
+
             (data as NSData).getBytes(&e1Eye, range: NSMakeRange(0, 2))
-            //MARK: Might not need these next 3 commented lines, check w/debugging!
-//            (data as NSData).getBytes(&e2Eye, range: NSMakeRange(2, 2))
-//            let eyeData2 = α(e2Eye);
-            //let eyeData = e1Eye;
-//            return UInt8(strtoul(eyeData, nil, 16)) //If DEC UNCOMMENT this
-            //print("Eye data: " + String(e1Eye))
-            return e1Eye //Needs to be debugged.
+            return e1Eye //Processes Eye data for both eyes, due to device design.
+            
         }
         print("We reached here, data is not a value!")
         return nil
     }
     
-    //MARK: HouseKeeping, in case of disconnects:
     func decodePeripheralState(peripheralState: CBPeripheralState) {
         switch peripheralState {
             case .disconnected:
