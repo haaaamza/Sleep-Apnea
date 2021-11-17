@@ -10,10 +10,22 @@ import FirebaseFirestoreSwift
 import CoreBluetooth
 
 var username: String = ""
+var peripheralName: String? = ""
+var pheriphID: UUID? = UUID(uuidString: "abcd")
+//var pheriphID : UUID {
+//    get{
+//        return UUID(uuidString: UUID_str)
+//    }
+//    set (id){
+//
+//    }
+//}//= UUID(uuidString: "") ?? UUID(uuidString: "abcd") as! UUID//NSUUID = NSUUID(uuidString: "")!
 struct Notification: Codable, Identifiable{ //Structure we write to Firebase
     @DocumentID var docID: String?
     var id: String = username //MARK: See if you need DocumentID
-    var EOG: Double
+    var EOG: Int
+    var epoch: Int
+    var bleTime: Int
     @ServerTimestamp var createdTime: Timestamp?
 }
 typealias α = Float
@@ -38,4 +50,18 @@ extension CBUUID{
     
     static let readBand = CBUUID(string:
         "49535343-1E4D-4BD9-BA61-23C647249616")
+}
+class timeSet {
+    private var myInitStamp:TimeInterval?;
+    var publicGetter:TimeInterval{
+        set {
+            if myInitStamp == nil {
+                myInitStamp = newValue;
+            }
+
+        }
+        get {
+            return myInitStamp!;
+        }
+    }
 }

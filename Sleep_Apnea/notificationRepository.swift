@@ -43,6 +43,12 @@ class notificationRepository: ObservableObject{
         if username != "" {
             do {
                 try db.collection("users").document(username).collection("data").addDocument(from: notif)
+//                try db.collection("users").document(username).setData([
+//                                                                        "epoch": FieldValue.increment(Int64(1)),
+//                                                                        "EOG": notif.EOG,
+//                                                                        "createdTime": notif.createdTime,
+//                                                                        "docId": notif.docID])//collection("data").addDocument(from: notif)
+                print("WRITE SUCCESS")
             } catch{
                 fatalError("Unable to encode task: \(error.localizedDescription)")
             }

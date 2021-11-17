@@ -10,7 +10,9 @@ import CoreBluetooth
 import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
-
+var count = 0
+//var initStamp: TimeInterval = 0
+let initTime = timeSet()
 class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate{
     @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var connectingActivityIndicator: UIActivityIndicatorView!
@@ -22,6 +24,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     //TODO: Possibly Get rid of Popover to Connect and connect in this ViewController.
     var peripheralSleep: CBPeripheral?
     var centralManager: CBCentralManager?
+//    let myInitStamp:TimeInterval?
     
     //MARK: ___________VIEW LIFECYCLE__________________________________
     override func viewDidAppear(_ animated: Bool) {
@@ -88,9 +91,13 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         print((peripheral.name!))
         print(peripheral.identifier)
         decodePeripheralState(peripheralState: peripheral.state)
-        if ((peripheral.name?.contains("Shiv05_3311")) ?? false){ //MARK: Insert name here
+        if ((peripheral.name?.contains("Shiv05_3311")) ?? false) || ((peripheral.name?.contains("Shibam_3311")) ?? false){ //MARK: Insert name here
             print("Found my board!")
             self.peripheralSleep = peripheral
+//            peripheralName = self.peripheralSleep?.name
+//            pheriphID = self.peripheralSleep?.identifier as! NSUUID
+            pheriphID = self.peripheralSleep!.identifier
+//            self.peripheralSleep?.identifier
             self.peripheralSleep?.delegate = self
             self.centralManager?.stopScan()
             self.centralManager?.connect(peripheralSleep!)
@@ -108,6 +115,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
             self.bottomImage.isHidden = false
         }
         print("Discovering all  services!....");
+      
         self.peripheralSleep?.discoverServices([CBUUID.bandService])
         self.peripheralSleep?.delegate = self
     }
@@ -121,8 +129,21 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
             self.connectingActivityIndicator.isHidden = false
             self.connectingActivityIndicator.startAnimating()
         }
-        self.centralManager?.scanForPeripherals(withServices: [CBUUID.bandService])
-        print("Scanning for Periphs")
+//        self.centralManager?.scanForPeripherals(withServices: [CBUUID.bandService])
+        let ID = self.centralManager?.retrievePeripherals(withIdentifiers: [pheriphID!]) 
+        
+//        self.centralManager?.scanForPeripherals(withServices: nil, options: nil)
+        self.centralManager?.connect(ID![0])
+        print("Trying to connect to Periphs")
+    }
+    func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
+        print("Failed to find my board!");
+        DispatchQueue.main.async { () -> Void in
+            self.centralMessage.text = "Failed to find my board...."
+            self.connectingActivityIndicator.isHidden = false
+            self.connectingActivityIndicator.startAnimating()
+        }
+        self.centralManager?.scanForPeripherals(withServices: nil, options: nil) //find service ID
     }
     
     //
@@ -131,10 +152,13 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         if let services = peripheral.services {
+            print("my SERVICE FOUND IS: \(services)\n")
             // now to discover characteristics for each service
             for service in services {
+//                print("SERVICE IS: \(service)\n")
                 // we want only to discover the characteristics of my InertialMeasurement Service
                 if service.uuid == CBUUID.bandService {
+//                    print("WE REACHED HERE")
                     // by setting it to be nil its going to discover all characteristics
                     print("My desired service: \(service.description)\n")
                     peripheral.discoverCharacteristics(nil, for: service)
@@ -146,10 +170,13 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     // STEP 10: confirm we've discovered characteristics
     // of interest within services of interest
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+        print("SUCCESS: We discovered Characteristic\n")
         if let charac = service.characteristics {
             for characteristic in charac {
+//                print("WE HAVE CHARACTERISTIC: \(characteristic)\n")
                 if characteristic.uuid == CBUUID.readBand {
                     print("My desired characteristic: \(characteristic.description)\n")
+                    print("WE NOTFIY NOW:\n")
                     peripheral.setNotifyValue(true, for: characteristic)
                 }
             }
@@ -157,18 +184,31 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         
     } // END func peripheral(... didDiscoverCharacteristicsFor service
     
+    func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
+        if (error != nil){
+            print("ERROR IS: \(String(describing: error))\n")
+        }
+    }
+   
     // STEP 12: we're notified whenever a characteristic
     // value updates regularly or posts once; read and
     // decipher the characteristic value(s) that we've
     // subscribed to
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-        
-        // for acceleration
-        if characteristic.uuid == CBUUID.readBand{
+        if (error != nil){
+            print(error as Any)
+        }
+        // for eog
+//        if characteristic.uuid == CBUUID.readBand{
             // STEP 13: we generally have to decode BLE
             // data into human readable format
 //            let acc_data = tb_vectorValue(using: characteristic)
-            let eog_data = getEyeData(using: characteristic) ?? 0 //gets Eye data
+            let eog_data = getEyeData(using: characteristic)  //gets Eye data
+
+            let eye_data = eog_data.0 ?? 0
+            let count_data = eog_data.1 ?? -1
+            let time_int = eog_data.2 ?? 0
+            
             //print("eog data: " + String(eog_data))
             DispatchQueue.main.async { () -> Void in
                 if username == ""{self.centralMessage.text = "Please enter your name!"}
@@ -176,14 +216,18 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
                     self.centralMessage.text = "Storing your data in the Cloud!"
                     //MARK: Update FireBase here!
                     //print("Cloud!!!")
-                    print("eog data: " + String(eog_data))
-//                    let e1_data = Double((eog_data?)!).magnitude)
-//                    let x_data = Double((acc_data?.x)!).magnitude
-//                    let y_data = Double((acc_data?.y)!).magnitude
-//                    let z_data = Double((acc_data?.z)!).magnitude
-//                    print(x_data)
-                    self.notifRepo.addData(Notification(EOG: eog_data))
-                }
+                    print("eog data: " + String(eye_data))
+//                    if count_data % 2 == 0{ //downgrading to 100Hz.
+//                        if ((count_data>(360000*2) && count_data<(360000*3)) || count_data>(360000*5) && count_data<(360000*6)) { //record only after an hour?
+                    let myTimeInterval = TimeInterval(time_int)
+                    initTime.publicGetter = time_int
+                    let newTime = myTimeInterval - initTime.publicGetter
+                    print("NEW TIME IS \(Int(newTime))")
+
+                    self.notifRepo.addData(Notification(EOG: eye_data, epoch: count_data, bleTime: Int(newTime)))
+//                        }
+//                    }
+//                }
             } // END DispatchQueue.main.async...
         } // END if characteristic.uuid ==...
         
@@ -212,16 +256,28 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         }
         return nil
     }
-    func getEyeData (using eogMeasurementCharacteristic: CBCharacteristic) -> Double?  /*/eyeData?*/{
-        if let data = eogMeasurementCharacteristic.value{
-            var e1Eye: Double = 0;
+    func getEyeData (using eogMeasurementCharacteristic: CBCharacteristic) -> (Int?, Int?, TimeInterval?)  /*/eyeData?*/{
 
-            (data as NSData).getBytes(&e1Eye, range: NSMakeRange(0, 2))
-            return e1Eye //Processes Eye data for both eyes, due to device design.
+        if let data = eogMeasurementCharacteristic.value{
+//            data.
+//            var e1Eye: UInt64 = 0xff;
+//            print("DATA COUNT IS: \(data.count)\n")
+//            if (data.count>1){
+//            (data as NSData).getBytes(&e1Eye, range: NSMakeRange(0, 7))
+//            }
+//            print("Value is: \(Int(e1Eye))\n")
+
+            let unicodeString = String(data: data, encoding: String.Encoding.utf8)!
+            var intValue : Int = NSString(string: unicodeString).integerValue
+            print((intValue))
+            count += 1
+            let timestamp = NSDate().timeIntervalSince1970
+//            print("MY INIT TIME IS: \(initTime.publicGetter)")
+            return (intValue, count, timestamp) //Processes Eye data for both eyes, due to device design.
             
         }
         print("We reached here, data is not a value!")
-        return nil
+        return (nil, nil, nil)
     }
     
     func decodePeripheralState(peripheralState: CBPeripheralState) {

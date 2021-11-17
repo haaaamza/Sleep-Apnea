@@ -22,6 +22,7 @@ class ProfileViewController: UIViewController {
         nameText.resignFirstResponder()
         if let text = nameText.text{
             username = text.uppercased() //update user text
+            count = 0 //reset counter after user change.
             print("\(text)")
             //dismiss popover
             dismiss(animated: true, completion: nil) //any block to execute after this? Update completion
